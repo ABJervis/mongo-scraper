@@ -1,7 +1,7 @@
 // require what is needed
 
 var express = require("express");
-var exphbs = require("express-handlebars")
+var exphbs = require("express-handlebars");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 
@@ -37,7 +37,7 @@ app.set("view engine", "handlebars");
 //connect to the Mongo DB
 
 //mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/sheltered-meadow-65065.git";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/hoopsdb";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
@@ -117,7 +117,7 @@ app.post("/articles/:id", function(req, res){
     //create a new comment
     db.Comment.create(req.body)
       .then(function(dbComment){
-          return db.Article.findOneAndUpdate({ _id: req.params.id }, {comment: dbComment._id }, {new: true });
+          return db.Article.findOneAndUpdate({ _id: req.params.id }, { comment: dbComment._id }, { new: true });
       })
       .then(function(dbArticle){
           res.json(dbArticle);
@@ -139,5 +139,5 @@ app.get("/saved/:id", function(req, res) {
 
 //start the server
 app.listen(PORT, function(){
-    console.log("App running on port " + PORT + "!");
+    console.log("App running on port " + PORT);
 });

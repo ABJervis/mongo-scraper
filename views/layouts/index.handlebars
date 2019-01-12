@@ -1,0 +1,9 @@
+  {{#each Articles}}
+    
+     <div>
+      <a class="articles" href="{{this.link}}">{{this.title}}</a>      
+      <div class="comment"></div>
+      <button data-value="{{this._id}}" class = "savearticle">Save this Article</button>
+     </div> 
+
+      {{/each}}

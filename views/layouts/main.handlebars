@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+     <link rel="stylesheet" href="/public/style.css" media="screen" title="no title" charset="utf-8">
+     <link href="https://fonts.googleapis.com/css?family=PT+Sans|Raleway|Sarabun" rel="stylesheet">
+    <title>Mongo Scraper</title>
+</head>
+<body>
+    <div class="jumbotron">
+     <h1 class="display-4">March Madness</h1>
+        <p class="lead">Stay up to date on all the latest news. Follow the road to March.</p>
+        <hr class="my-4">
+       
+    </div>
+        <div class="container">
+
+            <a href="/">Home</a>
+            <a href="/savedarticles">Saved Articles</a>
+
+            <button id="saved" onclick="document.getElementById('id01').style.display='block'" class="btn btn-light">Saved Articles</button>
+            
+            <button id="clear" onclick="document.getElementById('id02').style.display='block'" class="btn btn-light">Clear Articles</button>
+
+        </div>
+      </div>
+        {{{body}}}
+     
+
+     <div class="card">
+        <div class="card-footer">
+        Scrape it Good, Mongo Time.
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>    
+<script src="app.js"></script>
+</body>
+</html>

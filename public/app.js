@@ -23,19 +23,19 @@ $(document).on("click", "p", function(){
   //THEN you have to get the information to the page, use append to do this
   .then(function(data){
     console.log(data);
-    //we need the headline(title), summary, URL, first the title
-    $("#comments").append("<h2>" + data.title + "</h2>");
-    //now the summary
+    //we need the headline(title), body, URL, first the title
+    $("#comments").append("<h1>" + data.title + "</h1>");
+    //now the body
     $("#comments").append("<input id = 'titleinput' name='title' >");
     //need a text area to add a comment
-    $("#comments").append("<textarea id='summaryinput' name='summary'></textarea>");
+    $("#comments").append("<textarea id='bodyinput' name='body'></textarea>");
     //and, a button to submit the comment along with the id of the article to tie them together
     $("#comments").append("button data-id' " + data._id + "' id='savecomment'>Save Comment</button");
 
     //if there is a comment to the article, place the title and the comment as needed
     if(data.comment) {
         $("titleinput").val(data.comment.title);
-        $("#summaryinput").val(data.comment.summary);
+        $("#bodyinput").val(data.comment.body);
     }
   });
 });
@@ -53,7 +53,7 @@ $(document).on("click", "#savecomment", function(){
         //title 
         title: $("titleinput").val(),
         //comment
-        summary: $("summaryinput").val()
+        body: $("bodyinput").val()
     }
   })
 
@@ -65,5 +65,6 @@ $(document).on("click", "#savecomment", function(){
 
   //also need to remove the values entered in the input and text area for comment entry
   $("titleinput").val("");
-  $("#summaryinput").val("");
+  $("#bodyinput").val("");
 });
+
